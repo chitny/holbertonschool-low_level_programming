@@ -3,10 +3,10 @@
 #include <stdio.h>
 
 /**
- *main - have an if who returns positive or negative for variable n
- *Return: 0 if everything is ok
+ * main - assigns a random number to int n everytime
+ * it executes, and prints it
+ * Return: Always 0 (Success)
  */
-
 int main(void)
 {
 	int n;
