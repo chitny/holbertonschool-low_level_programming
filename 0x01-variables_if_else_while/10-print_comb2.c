@@ -6,19 +6,19 @@
  */
 int main(void)
 {
-	int n, m;
+	int i,m;
 
-	for (n = 48; n <= 57; n++)
+	for (i = 0; i < 10; i++)
 	{
-		for (m = 48; m <= 57; m++)
+		for (m = 0; m < 10; m++)
 		{
-			putchar(n);
-			putchar(m);
-			if (n != 57 || m != 57)
-			{
-				putchar(',');
-				putchar(' ');
-			}
+
+			putchar(i + '0');
+			putchar(m + '0');
+			if (i == 9 && m == 9)
+				break;
+			putchar(',');
+			putchar(' ');
 		}
 	}
 	putchar('\n');
