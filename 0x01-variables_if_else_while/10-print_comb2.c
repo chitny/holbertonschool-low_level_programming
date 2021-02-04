@@ -2,25 +2,26 @@
 
 /**
  * main - prints the numbers from 00 to 99
- * Return 0 if everything is correct
+ * Return: Always 0 (Success)
  */
+
 int main(void)
 {
-	int i,m;
+	int i, j;
 
 	for (i = 0; i < 10; i++)
 	{
-		for (m = 0; m < 10; m++)
-		{
+	for (j = 0; j < 10; j++)
+	{
 
-			putchar(i + '0');
-			putchar(m + '0');
-			if (i == 9 && m == 9)
-				break;
-			putchar(',');
-			putchar(' ');
-		}
+		putchar(i + '0');
+		putchar(j + '0');
+		if (i == 9 && j == 9)
+			break;
+		putchar(',');
+		putchar(' ');
 	}
+}
 	putchar('\n');
-	return (0);
+return (0);
 }
