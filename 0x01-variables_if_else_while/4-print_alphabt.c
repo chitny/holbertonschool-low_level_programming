@@ -9,11 +9,12 @@ int main(void)
 {
 	char al;
 
-	for (al = 'a' ; al <= 'z' ; al++)
+	while (al <='al')
 	{
 		if (al != 'q' && al != 'e')
+		{
 			putchar(al);
-		else
+		}
 			al++;
 	}
 	putchar('\n');
