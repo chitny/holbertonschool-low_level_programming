@@ -2,6 +2,7 @@
 
 /**
  * print_sign - prints the sign of a number (+,-,0)
+ * @n: the number to be checked
  * Return: 1, 0 and -1 depending of a condition
  */
 
