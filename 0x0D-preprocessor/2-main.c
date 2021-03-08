@@ -1,7 +1,8 @@
 #include <stdio.h>
 
-/*
-* main: prints the filename
+/**
+* main - prints the filename
+* Return: Always 0 (Success)
 */
 
 int main(void)
