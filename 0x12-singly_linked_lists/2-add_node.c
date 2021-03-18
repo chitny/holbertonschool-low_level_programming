@@ -1,7 +1,7 @@
 include "lists.h"
 
 /**
- * add_node - a function that adds a new node at the beginning of a list_t list.
+ * add_node - a function that adds a new node at the beginning of a list_t
  * @head: double pointer to the list_t
  * @str: new string to add in the new node
  * Return: the address or NULL
@@ -14,7 +14,7 @@ list_t *add_node(list_t **head, const char *str)
 	while (str[len])
 		len++;
 
-	new = malloc(sizeof(list_t));
+	newn = malloc(sizeof(list_t));
 	if (!newn)
 		return (NULL);
 
