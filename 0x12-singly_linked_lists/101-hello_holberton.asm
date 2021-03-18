@@ -1,14 +1,27 @@
-	          global    _start
+	;;  we will use function printf
+	extern printf
+	;;  mark label "main" as entry point of our executable
+	global main
 
-	          section   .text
-_start:	   mov       rax, 1	; system call for write
-	          mov       rdi, 1 ; file handle 1 is stdout
-	          mov       rsi, message ; address of string to output
-	          mov       rdx, 13	 ; number of bytes
-	          syscall		 ; invoke operating system to do the write
-	          mov       rax, 60	 ; system call for exit
-	          xor       rdi, rdi	 ; exit code 0
-	          syscall		 ; invoke operating system to exit
+	;;  this section contains all data
+	section .data
+	message db "Hello, Holberton", 10, 0
 
-	          section   .data
-message:	  db        "Hello, Holberton", 10 ; note the newline at the end
+	;;  this section contains all code
+	section .text
+main:
+	;;  save registers on stack
+	pushad
+
+	;;  print message
+	push dword message
+	call printf
+	add esp, 4
+
+	;;  restore registers
+	popad
+
+	;;  exit with code 0
+	mov eax,1
+	mov ebx,0
+	int 80h
