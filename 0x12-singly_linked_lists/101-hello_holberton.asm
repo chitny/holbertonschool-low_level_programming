@@ -1,25 +1,14 @@
-%define sys_write 1
-	%define stdout 1
+	          global    _start
 
-	%define sys_exit 60
-	%define success 0
+	          section   .text
+_start:	   mov       rax, 1	; system call for write
+	          mov       rdi, 1 ; file handle 1 is stdout
+	          mov       rsi, message ; address of string to output
+	          mov       rdx, 13	 ; number of bytes
+	          syscall		 ; invoke operating system to do the write
+	          mov       rax, 60	 ; system call for exit
+	          xor       rdi, rdi	 ; exit code 0
+	          syscall		 ; invoke operating system to exit
 
-	%define nl 10
-
-	section .data
-
-	    message db "Hello, Holberton", nl
-
-	section .text
-
-	global _start
-_start:
-	    mov rax, sys_write
-	    mov rdi, stdout
-	    mov rsi, message
-	    mov rdx, 14
-	    syscall
-
-	    mov rax, sys_exit
-	    mov rdi, success
-	    syscall
+	          section   .data
+message:	  db        "Hello, Holberton", 10 ; note the newline at the end
