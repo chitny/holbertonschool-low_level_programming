@@ -1,27 +1,28 @@
-	;;  we will use function printf
+	;;
+	;;  Simple NASM syntax assembly program for x86_64.
+	;;
+	;;  Use commands below to assemble, link and run ($ is the prompt):
+	;;    $ nasm -f elf64 hello_x86_64.asm
+	;;    $ gcc -o hello_x86_64 hello_x86_64.o
+	;;    $ ./hello_x86_64
+	;;    Hello, world!
+	;;
+
 	extern printf
-	;;  mark label "main" as entry point of our executable
+
+	section .text
+
 	global main
 
-	;;  this section contains all data
-	section .data
-	message db "Hello, Holberton", 10, 0
-
-	;;  this section contains all code
-	section .text
 main:
-	;;  save registers on stack
-	pushad
+	    push rbp
+	    mov rbp, rsp
 
-	;;  print message
-	push dword message
-	call printf
-	add esp, 4
+	    mov rdi, msg
+	    call printf
 
-	;;  restore registers
-	popad
+	    leave
+	    ret
 
-	;;  exit with code 0
-	mov eax,1
-	mov ebx,0
-	int 80h
+	section .data
+	    msg     db  'Hello, Holberton', 13, 10, 0
