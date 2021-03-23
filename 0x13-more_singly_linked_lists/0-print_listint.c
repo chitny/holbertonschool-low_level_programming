@@ -7,20 +7,14 @@
  */
 size_t print_listint(const listint_t *h)
 {
-	int i;
-	listint_t *search = (listint_t *)h;
+	size_t num = 0;
 
-	if (!h)
-		return (0);
-
-	for (i = 0; search; i++)
+	while (h)
 	{
-		if (!search->n)
-			printf("0\n");
-		else
-			printf("%i\n", search->n);
-		search = search->next;
+		printf("%d\n", h->n);
+		num++;
+		h = h->next;
 	}
 
-	return (i);
+	return (num);
 }
