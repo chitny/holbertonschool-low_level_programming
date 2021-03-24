@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * print_listint_safe - function that prints a listint_t linked list
+ * print_listint_safe - function that prints a listint_t
  * @head: list listint_t to print
  * Return: number of nodes
  */
