@@ -1,17 +1,22 @@
 #include <unistd.h>
 #include <string.h>
 
-/**
- * rand - check the code for Holberton School students.
- * Return: Always number of Lottery.
- */
-
-int rand(void)
-
+int rand()
 {
-	static int i = -1;
-	int randomn[6] = {8, 8, 7, 9, 23, 74};
+	static int ct = -1;
 
-	i++;
-	return (randomn[i]);
+	ct++;
+	if (ct == 0)
+		return 8;
+	if (ct == 1)
+		return 8;
+	if (ct == 2)
+		return 7;
+	if (ct == 3)
+		return 9;
+	if (ct == 4)
+		return 23;
+	if (ct == 5)
+		return 74;
+	return ct;
 }
