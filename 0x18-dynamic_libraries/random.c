@@ -1,3 +1,6 @@
+#include <unistd.h>
+#include <string.h>
+
 /**
  * rand - check the code for Holberton School students.
  * Return: Always number of Lottery.
