@@ -8,7 +8,7 @@ void print_list(hash_node_t *h)
 {
 	while (h)
 	{
-		printf("'%s': '%s'", h->key, h->value);
+		printf("' ': '%s'", h->key, h->value);
 		if (h->next)
 			printf(", ");
 		h = h->next;
