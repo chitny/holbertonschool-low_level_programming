@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-"""calculates the perimeter of the island"""
+"""
+    Calculates the perimeter
+"""
 
 
 def cuentagua(grid, i, j):
     """
-        Returns the number of water neighbors.
+        Returns the number of water neighbors
     """
 
     vec = 0
@@ -30,6 +32,6 @@ def island_perimeter(grid):
     for i in range(len(grid)):
         for j in range(len(grid[i])):
             if grid[i][j]:
-                perim += cuentagua(grid, i, j)
+                per += cuentagua(grid, i, j)
 
     return per
